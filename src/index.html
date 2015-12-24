@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+
+    <title>Find Recipes</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/bower_components/Framework7/dist/css/framework7.material.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/bower_components/Framework7/dist/css/framework7.material.colors.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/bower_components/mdi/css/materialdesignicons.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+  </head>
+  <body class="theme-brown">
+
+    <!-- Container para a Aplicação F7 -->
+    <div class="views">
+      <div class="view main-view">
+        <div class="pages navbar-fixed"></div>
+      </div>
+    </div>
+
+    <!-- LIBS -->
+    <script src="assets/bower_components/Framework7/dist/js/framework7.js"></script>
+    <script src="assets/bower_components/vue/dist/vue.js"></script>
+
+    <script>
+      window.$$ = Dom7;
+    </script>
+
+    <script src="cordova.js"></script>
+
+    <!-- Início scripts - APLICAÇÃO -->
+    <script src="scripts/app/config.js"></script>
+
+    <!-- Scripts - Intefaces -->
+    <script src="scripts/app/interfaces/promise.int.js"></script>
+    <script src="scripts/app/interfaces/http.int.js"></script>
+    <script src="scripts/app/interfaces/router.int.js"></script>
+    <script src="scripts/app/interfaces/timeout.int.js"></script>
+    <script src="scripts/app/interfaces/picker.int.js"></script>
+
+    <!-- Scripts - Adapters -->
+    <script src="scripts/framework/adapters/promise.adapter.js"></script>
+    <script src="scripts/framework/adapters/http.adapter.js"></script>
+    <script src="scripts/framework/adapters/router.adapter.js"></script>
+    <script src="scripts/framework/adapters/timeout.adapter.js"></script>
+    <script src="scripts/framework/adapters/picker.adapter.js"></script>
+
+    <!-- Scripts - Services -->
+    <script src="scripts/app/services/facebook.connect.js"></script>
+    <script src="scripts/app/services/history.navigation.js"></script>
+
+    <!-- Scripts - Repositories -->
+    <script src="scripts/app/repository/_base.rep.js"></script>
+    <script src="scripts/app/repository/receita.rep.js"></script>
+
+    <!-- Scripts - Business -->
+    <script src="scripts/app/business/_base.bsn.js"></script>
+    <script src="scripts/app/business/global.bsn.js"></script>
+    <script src="scripts/app/business/login/login.bsn.js"></script>
+    <script src="scripts/app/business/home/home.bsn.js"></script>
+    <script src="scripts/app/business/ingrediente/categoria.bsn.js"></script>
+    <script src="scripts/app/business/ingrediente/ingrediente.bsn.js"></script>
+    <script src="scripts/app/business/ingrediente/ingrediente.novo.bsn.js"></script>
+    <script src="scripts/app/business/ingrediente/ingrediente.resultado.bsn.js"></script>
+    <script src="scripts/app/business/receita/receita.bsn.js"></script>
+    <script src="scripts/app/business/receita/receita.detalhe.bsn.js"></script>
+    <!-- Fim scripts - APLICAÇÃO -->
+
+    <!-- INÍCIO DO CORDOVA E SEU EVENTO READY -->
+    <script src="scripts/framework/init.cordova.js"></script>
+
+    <!-- Início scripts - FRAMEWORK -->
+    <script src="scripts/framework/controllers/receita/receita.js"></script>
+    <script src="scripts/framework/controllers/receita/detalhe.js"></script>
+    <script src="scripts/framework/controllers/ingrediente/categoria.js"></script>
+    <script src="scripts/framework/controllers/ingrediente/ingrediente.js"></script>
+    <script src="scripts/framework/controllers/ingrediente/novo.js"></script>
+    <script src="scripts/framework/controllers/ingrediente/resultado.js"></script>
+  </body>
+</html>

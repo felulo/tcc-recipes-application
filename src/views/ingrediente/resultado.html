@@ -1,0 +1,57 @@
+<div class="page"
+  data-page="ingrediente-resultado">
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="left">
+        <a href="#" class="link icon-only back">
+          <i class="icon icon-back"></i>
+        </a>
+      </div>
+      <div class="center">Resultados</div>
+      <!-- <div class="right">
+        <a href="#" class="link icon-only">
+          <i class="icon icon-bars"></i>
+        </a>
+      </div> -->
+    </div>
+  </div>
+  <!-- FIM DA NAVBAR -->
+
+  <div class="page-content">
+    <div class="content-block receita-nao-encontrada" v-if="notFound">
+      <i class="icon mdi mdi-44 mdi-information-outline"></i>
+      <br>Não foi encontrada nenhuma receita relacionada.
+    </div>
+
+    <div class="list-block resultado-list" v-if="!notFound">
+      <ul>
+        <li class="card" v-for="recipe in recipes" @click="goDetailRecipe(recipe)">
+          <a href="views/receita/detalhe.html" class="item-link">
+            <div class="card-content">
+              <div class="card-content-inner receita-list clearfix">
+                <img :src="recipe.images[0]"/>
+
+                <div class="receita-list-info">
+                  <p>{{ recipe.name }}</p>
+
+                  <small v-for="ingredient in recipe.displayIngredients">
+                    {{ ingredient.quantity }} {{ ingredient.unit }} de {{ ingredient.name }}
+                  </small>
+
+                  <ul class="receita-list-rating">
+                    <li><i class="mdi mdi-star-outline"></i></li>
+                    <li><i class="mdi mdi-star-outline"></i></li>
+                    <li><i class="mdi mdi-star-outline"></i></li>
+                    <li><i class="mdi mdi-star-outline"></i></li>
+                    <li><i class="mdi mdi-star-outline"></i></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

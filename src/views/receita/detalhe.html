@@ -1,0 +1,101 @@
+<div class="page"
+  data-page="receita-detalhe">
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="left">
+        <a href="#" class="link icon-only back">
+          <i class="icon icon-back"></i>
+        </a>
+      </div>
+      <div class="center">{{ recipe.name }}</div>
+      <!-- <div class="right">
+        <a href="#" class="link icon-only">
+          <i class="icon mdi mdi-24 mdi-heart-outline"></i>
+        </a>
+        <a href="#" class="link icon-only">
+          <i class="icon icon-bars"></i>
+        </a>
+      </div> -->
+    </div>
+  </div>
+  <!-- FIM DA NAVBAR -->
+
+  <div class="page-content">
+    <div class="gallery">
+      <div class="swiper-container swiper-gallery">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="image in recipe.images">
+            <img :src="image">
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <div class="receita-detalhe-info content-block">
+      <div class="row">
+        <div class="col-auto">
+          <div>
+            <i class="icon mdi mdi-24 mdi-clock"></i>
+            <span>{{ recipe.time.hrs }}:{{ recipe.time.min }}:{{ recipe.time.sec }}</span>
+          </div>
+          <div>
+            <i class="icon mdi mdi-24 mdi-silverware"></i>
+            <span>{{ recipe.yield.count }} {{ recipe.yield.unit }}</span>
+          </div>
+        </div>
+        <!-- <div class="col-auto">
+          <div>Compartilhar</div>
+          <div>
+            <span class="buttons-row">
+              <a href="#" class="button">
+                <i class="icon mdi mdi-24 mdi-image-area"></i>
+              </a>
+              <a href="#" class="button">
+                <i class="icon mdi mdi-24 mdi-email"></i>
+              </a>
+              <a href="#" class="button">
+                <i class="icon mdi mdi-24 mdi-whatsapp"></i>
+              </a>
+            </span>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <div class="receita-detalhe-ingrediente-preparo">
+      <div class="buttons-row">
+        <a href="#" class="tab-link active button">Ingredientes</a>
+        <a href="#" class="tab-link button">Preparo</a>
+      </div>
+
+      <div class="swiper-container swiper-info">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div v-for="recipeDetail in recipe.recipes">
+              <div class="list-title">{{ recipeDetail.name }}</div>
+              <div class="list-block">
+                <ul class="no-border">
+                  <li class="item-content" v-for="ingredient in recipeDetail.ingredients">
+                    <div class="item-title">{{ ingredient.quantity }} {{ ingredient.unit }} - {{ ingredient.name }}</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div v-for="recipeDetail in recipe.recipes">
+              <div class="list-title">{{ recipeDetail.name }}</div>
+              <div class="list-block">
+                <ul>
+                  <li class="item-content" v-for="item in recipeDetail.prepare">
+                    <div class="item-title">{{ item }}</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

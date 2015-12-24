@@ -1,0 +1,44 @@
+{
+  "query": {
+    "nested": {
+      "path": "recipes.ingredients",
+      "query": {
+        "bool": {
+          "should": [{
+            "filtered": {
+              "query": {
+                "match": {
+                  "recipes.ingredients.name": "farinha"
+                }
+              },
+              "filter": {
+                "bool": {
+                  "must": [
+                    {"term": {"recipes.ingredients.unit": "xícara"}},
+                    {"range": {"recipes.ingredients.quantity": { "lte": 1}}}
+                  ]
+                }
+              }
+            }
+          },{
+            "filtered": {
+              "query": {
+                "match": {
+                  "recipes.ingredients.name": "ovo"
+                }
+              },
+              "filter": {
+                "bool": {
+                  "must": [
+                    {"term": {"recipes.ingredients.unit": "unidade"}},
+                    {"range": {"recipes.ingredients.quantity": { "lte": 1}}}
+                  ]
+                }
+              }
+            }
+          }]
+        }
+      }
+    }
+  }
+}

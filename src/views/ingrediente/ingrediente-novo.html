@@ -1,0 +1,53 @@
+<div class="picker-modal picker-new-ingredient">
+  <!-- Picker -->
+  <div class="toolbar">
+    <div class="toolbar-inner">
+      <div class="left"></div>
+      <div class="right">
+        <a href="#" class="color-white" @click="addIngredient">Adicionar</a>
+        <a href="#" class="color-white" @click="closePicker">Fechar</a>
+      </div>
+    </div>
+  </div>
+  <div class="picker-modal-inner">
+    <form class="list-block inputs-list">
+      <ul>
+        <li>
+          <div class="item-content">
+            <div class="item-media"><i class="icon mdi mdi-24 mdi-food-apple"></i></div>
+            <div class="item-inner">
+              <div class="item-title label">Ingrediente</div>
+              <div class="item-input item-input-field">
+                <input type="text" autofocus v-model="ingredient">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-media"><i class="icon mdi mdi-24 mdi-plus-one"></i></div>
+            <div class="item-inner">
+              <div class="item-title label">Quantidade</div>
+              <div class="item-input item-input-field">
+                <input type="number" v-model="quantity">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-media"><i class="icon mdi mdi-24 mdi-format-list-bulleted"></i></div>
+            <div class="item-inner">
+              <div class="item-title label">Unidade</div>
+              <div class="item-input item-input-field">
+                <select v-model="unit">
+                  <option v-for="item in units" :value="item.value">{{ item.name }}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="page"
+  data-page="receita">
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="left">
+        <a href="#" class="link icon-only back">
+          <i class="icon icon-back"></i>
+        </a>
+      </div>
+      <div class="center">Receita</div>
+      <!-- <div class="right">
+        <a href="#" class="link icon-only">
+          <i class="icon icon-bars"></i>
+        </a>
+      </div> -->
+    </div>
+  </div>
+  <!-- FIM DA NAVBAR -->
+
+  <!-- TOOLBAR -->
+  <div class="toolbar">
+    <div class="toolbar-inner">
+      <form class="searchbar" v-on:submit.prevent>
+        <div class="searchbar-input">
+          <i class="icon mdi mdi-24 mdi-food"></i>
+          <input type="search" placeholder="Digite a receita"
+            v-model="textRecipe"
+            @keyup="searchRecipe | debounce 800">
+          <a href="#" class="searchbar-clear"></a>
+        </div>
+        <a href="#" class="searchbar-cancel">Cancel</a>
+      </form>
+    </div>
+  </div>
+  <!-- FIM DA TOOLBAR -->
+
+  <div class="searchbar-overlay"></div>
+
+  <div class="page-content">
+    <div class="content-block receita-nao-encontrada" v-if="notFound">
+      <i class="icon mdi mdi-44 mdi-information-outline"></i>
+      <br>Não foi encontrada nenhuma receita relacionada.
+    </div>
+
+    <div class="list-block cards-list" v-if="!notFound">
+      <ul>
+        <li class="card" v-for="recipe in listRecipes" @click="goDetailRecipe(recipe)">
+          <a href="views/receita/detalhe.html" class="item-link">
+            <div class="card-content">
+              <div class="card-content-inner receita-list">
+                <img :src="recipe.images[0]"/>
+
+                <div class="receita-list-info">
+                  <p>{{ recipe.name }}</p>
+
+                  <ul class="receita-list-rating">
+                    <li><i class="mdi mdi-star-outline"></i></li>
+                    <li><i class="mdi mdi-star-outline"></i></li>
+                    <li><i class="mdi mdi-star-outline"></i></li>
+                    <li><i class="mdi mdi-star-outline"></i></li>
+                    <li><i class="mdi mdi-star-outline"></i></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

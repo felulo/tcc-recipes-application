@@ -1,0 +1,323 @@
+/* ----- GERAL ----- */
+
+* {
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+.mdi {
+  margin: 0 !important;
+}
+
+.mdi-16 {
+  width: 16px;
+  height: 16px;
+
+  font-size: 16px;
+}
+
+.mdi-24 {
+  width: 24px;
+  height: 24px;
+
+  font-size: 24px;
+}
+
+.mdi-32 {
+  width: 32px;
+  height: 32px;
+
+  font-size: 32px;
+}
+
+.mdi-44 {
+  width: 44px;
+  height: 44px;
+
+  font-size: 44px;
+}
+
+.mdi-48 {
+  width: 48px;
+  height: 48px;
+
+  font-size: 48px;
+}
+
+.navbar .left + .center {
+  margin-left: 0;
+}
+
+.page-content {
+  background-color: rgb(229,252,194) !important;
+}
+
+.swiper-container {
+  height: 100%;
+}
+
+/* ----- HOME ----- */
+
+.home-titulo {
+  padding: 20px 36px;
+
+  text-align: center;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.home-botoes {
+  position: absolute;
+  bottom: 15px;
+
+  width: 100%;
+
+  padding: 0 50px;
+}
+
+.home-info {
+  text-align: center;
+  font-size: 16px;
+}
+
+[data-page="home"] .buttons-row {
+  width: 100%;
+}
+
+[data-page="home"] .button {
+  height: initial !important;
+}
+
+/* ----- RECEITA ----- */
+
+[data-page="receita"] .searchbar input[type=search] {
+  background-image: none;
+  opacity: 1;
+}
+
+[data-page="receita"] .searchbar .icon {
+  position: absolute;
+  left: -5px;
+}
+
+[data-page="receita"] .list-block {
+  margin: 0 !important;
+}
+
+.receita-nao-encontrada {
+  text-align: center;
+  font-size: 16px;
+}
+
+.receita-list img {
+  float: left;
+  width: 60px;
+}
+
+.receita-list-info {
+  margin-left: 70px;
+}
+
+.receita-list-info p {
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  font-size: 20px;
+}
+
+.receita-list-rating {
+  margin: 0;
+  padding: 0 !important;
+  list-style: none;
+}
+
+.receita-list-rating li {
+  display: inline-block;
+}
+
+/* ----- CATEGORIA ----- */
+
+.categoria-card {
+  float: left;
+  width: calc((100% - 32px*1)/ 2);
+}
+
+.card-header {
+  padding: 0;
+}
+
+.card-header img {
+  width: 100%;
+  height: auto;
+  border-radius: 2px 2px 0 0;
+}
+
+.card-titulo {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ----- INGREDIENTE ----- */
+
+.picker-new-ingredient .list-block {
+  margin: 0;
+}
+
+[data-page="ingrediente"] .aviso {
+  margin: 10px 16px;
+  padding: 5px;
+
+  border-radius: 2px;
+
+  background-color: #795548;
+  color: #FFF;
+
+  text-align: center;
+}
+
+[data-page="ingrediente"] .page-content .list-block {
+  margin: 0;
+}
+
+/* ----- RESULTADO ----- */
+
+.resultado-list {
+  margin: 0;
+}
+
+[data-page="ingrediente-resultado"] .card small {
+  display: block;
+}
+
+[data-page="ingrediente-resultado"] .card:nth-child(1) img {
+  width: 100px;
+}
+
+[data-page="ingrediente-resultado"] .card:nth-child(1) .receita-list-info {
+  margin-left: 110px;
+}
+
+[data-page="ingrediente-resultado"] .card:nth-child(2) img,
+[data-page="ingrediente-resultado"] .card:nth-child(3) img  {
+  width: 80px;
+}
+
+[data-page="ingrediente-resultado"] .card:nth-child(2) .receita-list-info,
+[data-page="ingrediente-resultado"] .card:nth-child(3) .receita-list-info {
+  margin-left: 90px;
+}
+
+/* ----- RECEITA-DETALHE ----- */
+
+.gallery {
+  width: 100%;
+  height: 240px;
+}
+
+.gallery .swiper-slide {
+  padding: 8px;
+}
+
+.gallery .swiper-wrapper {
+  height: calc(100% - 20px);
+}
+
+.gallery .swiper-pagination {
+  bottom: 5px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 2px;
+}
+
+.receita-detalhe-info {
+  margin: 0;
+
+  background-color: rgb(84,121,128);
+  color: #FFF;
+}
+
+.receita-detalhe-info .buttons-row .button {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  min-width: auto;
+
+  color: #FFF;
+}
+
+.receita-detalhe-info .col-auto div {
+  margin: 10px 0;
+}
+
+.receita-detalhe-info .col-auto:first-of-type div {
+  margin: 13px 0;
+}
+
+.swiper-info {
+  height: auto;
+}
+
+.receita-detalhe-ingrediente-preparo .buttons-row {
+  height: 48px;
+
+  background-color: #795548;
+}
+
+.receita-detalhe-ingrediente-preparo .button {
+  height: 48px;
+  margin-left: 0;
+  padding: 6px 0px;
+
+  color: #FFF !important;
+}
+
+.receita-detalhe-ingrediente-preparo .button.active {
+  border-radius: 0;
+  border-bottom: 2px solid #FFF;
+}
+
+.receita-detalhe-ingrediente-preparo .tabs {
+  background-color: rgb(229,252,194) !important;
+}
+.receita-detalhe-ingrediente-preparo .list-title {
+  padding: 8px;
+
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.receita-detalhe-ingrediente-preparo .list-block {
+  margin: 0;
+}
+
+.receita-detalhe-ingrediente-preparo li {
+  padding: 8px !important;
+}
+
+.receita-detalhe-ingrediente-preparo li:nth-child(even) {
+  background-color: rgb(203, 255, 144);
+}

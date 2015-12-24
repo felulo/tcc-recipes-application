@@ -1,0 +1,20 @@
+{
+  "name": "tcc-recipes-application",
+  "version": "1.0.0",
+  "description": "Aplicativo que traz as receitas pelo nome ou pela quantidade de ingredientes, tendo também como poder salvar suas receitas favoritas e avaliar as receitas existentes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "elasticsearch",
+    "cordova",
+    "html",
+    "css",
+    "javascript",
+    "framework7",
+    "vuejs"
+  ],
+  "author": "Felipe Luis Lopes",
+  "license": "MIT"
+}

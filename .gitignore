@@ -1,0 +1,6 @@
+.idea
+.git
+
+src/Assets/bower_components
+src/cordova_project
+node_modules

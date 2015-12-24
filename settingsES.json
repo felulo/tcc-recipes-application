@@ -1,0 +1,100 @@
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "recipe_index_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": "standard,lowercase,recipe"
+        },
+        "recipe_search_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "fitler": "standard,lowercase"
+        }
+      },
+      "filter": {
+        "recipe": {
+          "type": "nGram",
+          "min_gram": "1",
+          "max_gram": "20"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "recipe": {
+      "properties": {
+        "recipes": {
+          "properties": {
+            "prepare": {
+              "type": "string",
+              "index": "no"
+            },
+            "name": {
+              "type": "string",
+              "index": "no"
+            },
+            "ingredients": {
+              "type": "nested",
+              "properties": {
+                "unit": {
+                  "type": "string"
+                },
+                "quantity": {
+                  "type": "long"
+                },
+                "name": {
+                  "type": "string",
+                  "index_analyzer": "recipe_index_analyzer",
+                  "search_analyzer": "recipe_search_analyzer"
+                },
+                "optional": {
+                  "type": "boolean",
+                  "index": "no"
+                }
+              }
+            }
+          }
+        },
+        "images": {
+          "type": "string",
+          "index": "no"
+        },
+        "yield": {
+          "properties": {
+            "unit": {
+              "type": "string",
+              "index": "no"
+            },
+            "count": {
+              "type": "long",
+              "index": "no"
+            }
+          }
+        },
+        "name": {
+          "type": "string",
+          "index_analyzer": "recipe_index_analyzer",
+          "search_analyzer": "recipe_search_analyzer"
+        },
+        "time": {
+          "properties": {
+            "sec": {
+              "type": "long",
+              "index": "no"
+            },
+            "min": {
+              "type": "long",
+              "index": "no"
+            },
+            "hrs": {
+              "type": "long",
+              "index": "no"
+            }
+          }
+        }
+      }
+    }
+  }
+}
